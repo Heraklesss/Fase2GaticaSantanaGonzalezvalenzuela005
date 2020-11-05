@@ -1,0 +1,41 @@
+{% extends "base_generic.html" %}
+
+{% block content %}
+{% load static %}
+
+<section class="page-section masthead" id="contact">
+
+    <div class="container">
+
+        <h2 class="page-section-heading text-center text-uppercase text-secondary mb-0 " style="font-size:50px;"> Juego </h2>
+
+
+        <img src="{% static  'static/img/lolo' %}" alt="">
+
+    <div class="divider-custom">
+    <div class="divider-custom-line"></div>
+    <div class="divider-custom-icon">
+        <i class="fas fa-book-open"></i>
+    </div>
+    <div class="divider-custom-line"></div>
+    </div>
+
+    <div class="row">
+    <div class="col-lg-8 mx-auto">
+        <br>
+    <form method="POST" class="post-form">{% csrf_token %}
+        <div style="font-size: 12px;">
+            {{ form.as_p }}
+        </div>
+        <button type="submit" class="save btn btn-primary btn-xl" style="float: right;">Guardar</button>
+        <button onClick="javascript:history.go(-1)" class="btn btn-primary btn-xl" style="float:left;" >Atrás</button>
+        <br>
+        
+    </form>
+    
+</div>
+</div>
+</div>
+</section>
+
+{% endblock %}

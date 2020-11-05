@@ -9,5 +9,15 @@ urlpatterns = [
     path('preguntas', views.preguntas, name='preguntas'),
     path('contacto', views.contacto, name='contacto'),
     path('red', views.red, name='red'),
-    path('fallguys', views.fallguys, name='fallguys')
+    path('fallguys', views.fallguys, name='fallguys'),
+    path('game/<str:pk>', views.GameDetailView.as_view(), name='videojuegos-detail'),
+]
+
+urlpatterns += [
+    path('game/create/', views.GameCreate.as_view(), name='videojuegos_create' ),
+    path('game/<str:pk>/update/', views.GameUpdate.as_view(), name='videojuegos_update'),
+    path('game/<str:pk>/delete/', views.GameDelete.as_view(), name='videojuegos_delete'),
+
+
+
 ]

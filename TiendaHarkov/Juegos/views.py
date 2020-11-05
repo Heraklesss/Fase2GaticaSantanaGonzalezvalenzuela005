@@ -2,6 +2,10 @@ from django.shortcuts import render
 from . models import videojuegos
 from django.views import generic
 
+#formulario
+from django.views.generic.edit import CreateView, UpdateView, DeleteView
+from django.urls import reverse_lazy
+
 # Create your views here.
 
 def index(request):
@@ -79,3 +83,20 @@ def fallguys(request):
         'fallguys.html',
         context={'num_juegos': num_Juegos},
     )
+
+class GameCreate(CreateView):
+    model = videojuegos
+    fields = ['name', 'pegi']
+
+class GameUpdate(UpdateView):
+    model = videojuegos
+    fields = ['name','pegi']
+
+class GameDelete(DeleteView):
+    model = videojuegos
+    success_url = reverse_lazy('index')
+
+
+from django.views import generic
+class GameDetailView(generic.DetailView):
+    model = videojuegos
