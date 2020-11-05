@@ -11,19 +11,23 @@
 
 </div>
     <div class="container d-flex flex-column">
-        <h1 class="page-section-heading text-uppercase text-secondary mb-0" > {{videojuegos.name}} 
+        <h1 class="page-section-heading text-uppercase text-secondary mb-0" > [{{videojuegos.name}}]
+          
             
-          <!--===============================================================================================-->
+          
+          
+            
+            
+        </h1>
+        <h2 class="page-section-heading text-uppercase text-secondary mb-0"> Clasificacion por edad: ({{videojuegos.pegi}})
           {% if user.is_authenticated  %}{% if user.is_staff %}
 
          <a class="btn btn-primary" href="{% url 'videojuegos_update' pk=videojuegos.pk %}">Editar    <span class="glyphicon glyphicon-pencil"></span></a>
             <a class="btn btn-primary" href="{% url 'videojuegos_delete' pk=videojuegos.pk %}">Eliminar    <span class="glyphicon glyphicon-trash"></span></a>
-          <!--=======aqui codigo=======-->
+          
         
           {% else %}{% endif %}{% else %}{% endif %}
-          <!--===============================================================================================-->   
-            
-        </h1>
+        </h2>
 
         <div class="col-md-8" style="margin-top: 5%;">
 
@@ -31,6 +35,7 @@
           <p class="texto">{{videojuegos.summary}}</p>
         <br>
         </div>
+        
 
     </div>
 </header>

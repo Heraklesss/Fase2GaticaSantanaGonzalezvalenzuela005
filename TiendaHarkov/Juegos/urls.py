@@ -11,6 +11,8 @@ urlpatterns = [
     path('red', views.red, name='red'),
     path('fallguys', views.fallguys, name='fallguys'),
     path('game/<str:pk>', views.GameDetailView.as_view(), name='videojuegos-detail'),
+    path('games/', views.GameListView.as_view(), name ='videojuegos'),
+    
 ]
 
 urlpatterns += [

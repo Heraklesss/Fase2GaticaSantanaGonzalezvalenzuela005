@@ -97,6 +97,14 @@ class GameDelete(DeleteView):
     success_url = reverse_lazy('index')
 
 
+
 from django.views import generic
+
+
+class GameListView(generic.ListView):
+    model = videojuegos
+    paginate_by = 20
+
+
 class GameDetailView(generic.DetailView):
     model = videojuegos
